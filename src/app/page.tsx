@@ -1,3 +1,5 @@
+import { Aside } from '@/components/Aside';
+import { NavLink } from '@/components/_UI/NavLink';
 import {
   Laptop2,
   LayoutList,
@@ -24,58 +26,43 @@ export default function Home() {
   return (
     <div className="h-screen flex flex-col">
       <div className="flex flex-1">
-        <aside className="w-72 bg-zinc-950 p-6">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-            <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-          </div>
+        <Aside.Root>
+          <Aside.Header />
+          <Aside.Menu variant="top">
+            <NavLink.Menu
+              variant="top"
+              path="#"
+              icon={<HomeIcon />}
+              text="Home"
+            />
+            <NavLink.Menu
+              variant="top"
+              path="#"
+              icon={<Search />}
+              text="Search"
+            />
+            <NavLink.Menu
+              variant="top"
+              path="#"
+              icon={<Library />}
+              text="Your Library"
+            />
+          </Aside.Menu>
 
-          <nav className="space-y-5 mt-10">
-            <Link
-              href=""
-              className="flex items-center gap-3 text-sm font-semibold text-zinc-200 "
-            >
-              <HomeIcon />
-              Home
-            </Link>
-            <Link
-              href=""
-              className="flex items-center gap-3 text-sm font-semibold text-zinc-200 "
-            >
-              <Search />
-              Search
-            </Link>
-            <Link
-              href=""
-              className="flex items-center gap-3 text-sm font-semibold text-zinc-200 "
-            >
-              <Library />
-              Your Library
-            </Link>
-          </nav>
+          <Aside.Menu variant="bottom">
+            <NavLink.Menu variant="bottom" path="#" text="Hot Hits Brasil" />
+            <NavLink.Menu variant="bottom" path="#" text="Hits da Internet" />
+            <NavLink.Menu variant="bottom" path="#" text="My Playlist #10" />
+            <NavLink.Menu variant="bottom" path="#" text="Top Internacionais" />
+          </Aside.Menu>
+        </Aside.Root>
 
-          <nav className="mt-6 pt-6 border-t border-zinc-800 flex flex-col gap-3">
-            <Link href="" className="text-sm text-zinc-400 hover:text-zinc-100">
-              Hot Hits Brasil
-            </Link>
-            <Link href="" className="text-sm text-zinc-400 hover:text-zinc-100">
-              Hits da Internet
-            </Link>
-            <Link href="" className="text-sm text-zinc-400 hover:text-zinc-100">
-              My Playlist #10
-            </Link>
-            <Link href="" className="text-sm text-zinc-400 hover:text-zinc-100">
-              Top Internacionais
-            </Link>
-          </nav>
-        </aside>
         <main className="flex-1 p-6">
           <div className="flex items-center gap-4 ">
-            <button className="flex rounded-full bg-black/40 p-1">
+            <button className="flex rounded-full bg-black/40 p-1 hover:bg-zinc-600">
               <ChevronLeft />
             </button>
-            <button className="flex rounded-full bg-black/40 p-1">
+            <button className="flex rounded-full bg-black/40 p-1 hover:bg-zinc-600">
               <ChevronRight />
             </button>
           </div>
