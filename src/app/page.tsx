@@ -1,4 +1,6 @@
 import { Aside } from '@/components/Aside';
+import { Main } from '@/components/Main';
+import { Button } from '@/components/Main/components/Button';
 import { NavLink } from '@/components/_UI/NavLink';
 import {
   Laptop2,
@@ -11,16 +13,12 @@ import {
   SkipForward,
   Volume,
 } from 'lucide-react';
-import {
-  Home as HomeIcon,
-  Search,
-  Library,
-  ChevronLeft,
-  ChevronRight,
-  Play,
-} from 'lucide-react';
+
+import albumImage from '../../public/album.jpg';
+
+import { Home as HomeIcon, Search, Library, Play } from 'lucide-react';
+
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -57,141 +55,60 @@ export default function Home() {
           </Aside.Menu>
         </Aside.Root>
 
-        <main className="flex-1 p-6">
-          <div className="flex items-center gap-4 ">
-            <button className="flex rounded-full bg-black/40 p-1 hover:bg-zinc-600">
-              <ChevronLeft />
-            </button>
-            <button className="flex rounded-full bg-black/40 p-1 hover:bg-zinc-600">
-              <ChevronRight />
-            </button>
-          </div>
+        <Main.Root>
+          <Main.Header>
+            <Button.Top variant="left" />
+            <Button.Top variant="right" />
+          </Main.Header>
 
-          <h1 className="font-semibold text-3xl mt-10">Good Afternoon</h1>
+          <Main.Title text="Good Afternoon" />
 
-          <div className="grid grid-cols-3 gap-4 mt-4">
-            <Link
-              href=""
-              className="bg-white/5 group rounded-md flex items-center gap-4 overflow-hidden hover:bg-white/10 transition-colors "
-            >
-              <Image
-                src="/album.jpg"
-                width={104}
-                height={104}
-                alt="Capa do album do VGBeats"
-              />
-              <strong>Instinto Superior</strong>
+          <Main.AlbumContainer>
+            <Main.AlbumCard img={albumImage} title="Instinto Superior" />
+            <Main.AlbumCard img={albumImage} title="Instinto Superior" />
+            <Main.AlbumCard img={albumImage} title="Instinto Superior" />
+            <Main.AlbumCard img={albumImage} title="Instinto Superior" />
+            <Main.AlbumCard img={albumImage} title="Instinto Superior" />
+            <Main.AlbumCard img={albumImage} title="Instinto Superior" />
+          </Main.AlbumContainer>
 
-              <button className="w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible">
-                <Play className="fill-black" />
-              </button>
-            </Link>
-            <Link
-              href=""
-              className="bg-white/5 group rounded-md flex items-center gap-4 overflow-hidden hover:bg-white/10 transition-colors "
-            >
-              <Image
-                src="/album.jpg"
-                width={104}
-                height={104}
-                alt="Capa do album do VGBeats"
-              />
-              <strong>Instinto Superior</strong>
+          <Main.Subtitle text="Made for Maciel Azevedo" />
 
-              <button className="w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible">
-                <Play className="fill-black" />
-              </button>
-            </Link>
-            <Link
-              href=""
-              className="bg-white/5 group rounded-md flex items-center gap-4 overflow-hidden hover:bg-white/10 transition-colors "
-            >
-              <Image
-                src="/album.jpg"
-                width={104}
-                height={104}
-                alt="Capa do album do VGBeats"
-              />
-              <strong>Instinto Superior</strong>
-
-              <button className="w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible">
-                <Play className="fill-black" />
-              </button>
-            </Link>
-            <Link
-              href=""
-              className="bg-white/5 group rounded-md flex items-center gap-4 overflow-hidden hover:bg-white/10 transition-colors "
-            >
-              <Image
-                src="/album.jpg"
-                width={104}
-                height={104}
-                alt="Capa do album do VGBeats"
-              />
-              <strong>Instinto Superior</strong>
-
-              <button className="w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible">
-                <Play className="fill-black" />
-              </button>
-            </Link>
-            <Link
-              href=""
-              className="bg-white/5 group rounded-md flex items-center gap-4 overflow-hidden hover:bg-white/10 transition-colors "
-            >
-              <Image
-                src="/album.jpg"
-                width={104}
-                height={104}
-                alt="Capa do album do VGBeats"
-              />
-              <strong>Instinto Superior</strong>
-
-              <button className="w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible">
-                <Play className="fill-black" />
-              </button>
-            </Link>
-            <Link
-              href=""
-              className="bg-white/5 group rounded-md flex items-center gap-4 overflow-hidden hover:bg-white/10 transition-colors "
-            >
-              <Image
-                src="/album.jpg"
-                width={104}
-                height={104}
-                alt="Capa do album do VGBeats"
-              />
-              <strong>Instinto Superior</strong>
-
-              <button className="w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible">
-                <Play className="fill-black" />
-              </button>
-            </Link>
-          </div>
-
-          <h2 className="font-semibold text-2xl mt-10">
-            Made for Maciel Azevedo
-          </h2>
-
-          <div className="grid grid-cols-8 gap-4 mt-4">
-            <Link
-              href="#"
-              className=" bg-white/5 p-3 rounded-md flex flex-col gap-2 hover:bg-white/10"
-            >
-              <Image
-                className="w-full"
-                src="/album.jpg"
-                width={120}
-                height={120}
-                alt="Capa do album do VGBeats"
-              />
-              <strong className="font-semibold">Daily Mix 1</strong>
-              <span className="text-sm text-zinc-400">
-                Wallows, COIN, girl in red and more
-              </span>
-            </Link>
-          </div>
-        </main>
+          <Main.CategoryContainer>
+            <NavLink.Category
+              artists="Wallows, COIN, girl in red and more"
+              alt=""
+              img={albumImage}
+              path="#"
+            />
+            <NavLink.Category
+              artists="Wallows, COIN, girl in red and more"
+              alt=""
+              img={albumImage}
+              path="#"
+            />
+            <NavLink.Category
+              artists="Wallows, COIN, girl in red and more"
+              alt=""
+              img={albumImage}
+              path="#"
+            />
+            <NavLink.Category
+              artists="Wallows, COIN, girl in red and more"
+              alt=""
+              img={albumImage}
+              path="#"
+            />
+            <NavLink.Category
+              artists="Wallows, COIN, girl in red and more"
+              alt=""
+              img={albumImage}
+              path="#"
+            />
+          </Main.CategoryContainer>
+        </Main.Root>
       </div>
+
       <footer className="bg-zinc-800 border-t border-zinc-700 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Image
