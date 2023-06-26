@@ -13,7 +13,7 @@ import { Footer } from '@/components/Footer';
 export default function Home() {
   return (
     <div className="h-screen flex flex-col">
-      <div className="flex flex-1">
+      <div className="flex flex-1 max-sm:flex-col">
         <Aside.Root>
           <Aside.Header />
           <Aside.Menu variant="top">
@@ -107,7 +107,6 @@ export default function Home() {
           alt="VG Beats Music"
         />
         <Footer.PlayerController />
-
         <Footer.OtherControls />
       </Footer.Root>
     </div>

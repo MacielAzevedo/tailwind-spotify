@@ -14,8 +14,8 @@ export default function Menu({ icon, text, path, variant }: MenuTopProps) {
       href={path}
       className={`${
         variant === 'top'
-          ? 'flex items-center gap-3 text-sm font-semibold text-zinc-200 hover:text-zinc-400'
-          : 'text-sm text-zinc-400 hover:text-zinc-100'
+          ? 'flex items-center gap-3 text-sm font-semibold text-zinc-200 hover:text-zinc-400 max-sm:justify-center'
+          : 'text-sm text-zinc-400 hover:text-zinc-100 max-sm:text-center'
       }`}
     >
       {icon}

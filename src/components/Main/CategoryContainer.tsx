@@ -7,5 +7,9 @@ interface CategoryContainerProps {
 export default function CategoryContainer({
   children,
 }: CategoryContainerProps) {
-  return <div className="grid grid-cols-8 gap-4 mt-4">{children}</div>;
+  return (
+    <div className="grid grid-cols-8 gap-4 mt-4 max-sm:grid-cols-2">
+      {children}
+    </div>
+  );
 }
