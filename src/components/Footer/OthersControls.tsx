@@ -2,7 +2,7 @@ import { Mic2, LayoutList, Laptop2, Volume, Maximize2 } from 'lucide-react';
 
 export default function OtherControls() {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 md:gap-2 lg:gap-4">
       <Mic2 size={20} />
       <LayoutList size={20} />
       <Laptop2 size={20} />

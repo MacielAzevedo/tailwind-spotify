@@ -11,7 +11,7 @@ export default function AlbumCard({ img, title }: AlbumCardProps) {
   return (
     <Link
       href="#"
-      className="bg-white/5 group rounded-md flex items-center gap-4 overflow-hidden hover:bg-white/10 transition-colors max-sm:flex-col max-sm:h-40 max-sm:pt-3"
+      className="bg-white/5 group rounded-md flex items-center gap-4 overflow-hidden hover:bg-white/10 transition-colors"
     >
       <Image
         src={img}
@@ -20,7 +20,7 @@ export default function AlbumCard({ img, title }: AlbumCardProps) {
         alt="Capa do album do VGBeats"
         priority
       />
-      <strong className="max-sm:text-xs">{title}</strong>
+      <strong>{title}</strong>
 
       <Button.Player variant="album" />
     </Link>
